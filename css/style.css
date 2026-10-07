@@ -1,0 +1,57 @@
+body{
+    background-color:rgb(252, 230, 245);
+    margin: 0;
+}
+#Bem-vindo{
+    color:#603a2c;
+    font-family: Arial, sans-serif;
+    margin-left: 220px;
+}
+.barra-lateral {
+  width: 150px;
+  min-height: 90vh;
+  background: #FFE1EC;
+  padding: 60px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #f6d2e7;
+  color: #C2457A;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-size:larger;
+  
+}
+.inicio:hover,
+.Notas:hover,
+.Agenda:hover,
+.Tarefas:hover,
+.Foco:hover {
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    padding: 10px;
+    color:#fe5ea1;
+    
+}
+.inicio,
+.Notas,
+.Agenda,
+.Tarefas,
+.Foco{
+    margin: 10px;
+    color:#603a2c;
+}
+
+.barra-lateral button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}

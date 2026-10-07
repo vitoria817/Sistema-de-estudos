@@ -1,0 +1,98 @@
+body{
+    background-color:rgb(252, 230, 245);
+    margin: 0;
+}
+
+.barra-lateral-notas {
+  width: 150px;
+  min-height: 90vh;
+  background: #FFE1EC;
+  padding: 60px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #f6d2e7;
+  color: #C2457A;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-size:larger;
+  
+}
+.inicio:hover,
+.Notas:hover,
+.Agenda:hover,
+.Tarefas:hover,
+.Foco:hover {
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    padding: 10px;
+    color:#fe5ea1;
+    
+}
+.inicio,
+.Notas,
+.Agenda,
+.Tarefas,
+.Foco{
+    margin: 10px;
+    color:#603a2c;
+}
+
+.barra-lateral-notas button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.BuscarNotas{
+    border-radius: 16px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    border-color: #ffb6eb;
+    border-style: solid;
+    width: 200px;
+    margin-left: 200px;
+    padding: 7px;
+}
+#buscar{
+    border:none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color:#63463f;
+}
+.BuscarNotas #buscar::placeholder {
+  color: #6d5448;
+}
+input {
+  border: none;
+  outline: none;
+}
+
+.escrever-notas{
+    margin-left: 500px;
+    margin-top: -60px;
+    font-family: system-ui, sans-serif;
+    font-weight: 400;
+    color:#3f261d;
+}
+#notas{
+    padding: 12px;
+    width: 300px;
+    border-radius: 16px;
+    border-color: #ffb6eb;
+    color:#63463f;
+     width: 400px;
+    height: 200px;
+    resize: none;
+}
+textarea {
+  outline: none;
+}
