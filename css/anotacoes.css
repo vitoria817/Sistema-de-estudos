@@ -79,20 +79,35 @@ input {
 .escrever-notas{
     margin-left: 500px;
     margin-top: -60px;
-    font-family: system-ui, sans-serif;
+    font-family: Arial, sans-serif;
     font-weight: 400;
-    color:#3f261d;
+    color:#705247;
 }
 #notas{
     padding: 12px;
     width: 300px;
     border-radius: 16px;
     border-color: #ffb6eb;
-    color:#63463f;
+    color:#7d5b53;
      width: 400px;
     height: 200px;
     resize: none;
 }
 textarea {
   outline: none;
+}
+
+#salvar{
+    margin-left: 500px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #fb97cb;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    border-color: #694e3c;
+}
+h1{
+    font-family: Arial, sans-serif;
 }
