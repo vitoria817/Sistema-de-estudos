@@ -27,9 +27,10 @@ let feitas = tarefas.filter(t => t.feita).length;
     resumo.textContent = feitas + " de " + tarefas.length + " feitas";
 
     tarefas.forEach(t => {
-        let div = document.createElement("div");
+     let div = document.createElement("div");
         div.className = "tarefa";
         if(t.feita) div.classList.add("feita");
+
 
         let check = document.createElement("input");
         check.type = "checkbox";
