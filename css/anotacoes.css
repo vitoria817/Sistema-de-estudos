@@ -1,27 +1,45 @@
-body{
-    background-color:rgb(252, 230, 245);
+body {
+    background-color: rgb(252, 230, 245);
     margin: 0;
+    font-family: Arial, sans-serif;
+    color: #603a2c;
 }
 
 .barra-lateral-notas {
-  width: 150px;
-  min-height: 90vh;
-  background: #FFE1EC;
-  padding: 60px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background: #f6d2e7;
-  color: #C2457A;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  font-size:larger;
-  
+    width: 150px;
+    padding: 60px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: #f6d2e7;
+    color: #C2457A;
+    text-align: center;
+    font-size: larger;
 }
+
+.barra-lateral-notas button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.inicio,
+.Notas,
+.Agenda,
+.Tarefas,
+.Foco {
+    margin: 10px;
+    color: #603a2c;
+}
+
 .inicio:hover,
 .Notas:hover,
 .Agenda:hover,
@@ -30,84 +48,251 @@ body{
     background-color: #f9f9f9;
     border-radius: 16px;
     padding: 10px;
-    color:#fe5ea1;
-    
-}
-.inicio,
-.Notas,
-.Agenda,
-.Tarefas,
-.Foco{
-    margin: 10px;
-    color:#603a2c;
+    color: #fe5ea1;
 }
 
-.barra-lateral-notas button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.BuscarNotas{
-    border-radius: 16px;
-    background-color: #ffffff;
-    margin-top: 20px;
-    border-color: #ffb6eb;
-    border-style: solid;
-    width: 200px;
+/* layout principal */
+.principal {
     margin-left: 200px;
-    padding: 7px;
-}
-#buscar{
-    border:none;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    color:#63463f;
-}
-.BuscarNotas #buscar::placeholder {
-  color: #6d5448;
-}
-input {
-  border: none;
-  outline: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 24px;
 }
 
-.escrever-notas{
-    margin-left: 500px;
-    margin-top: -60px;
-    font-family: Arial, sans-serif;
-    font-weight: 400;
-    color:#705247;
-}
-#notas{
-    padding: 12px;
+.coluna-lista {
     width: 300px;
-    border-radius: 16px;
-    border-color: #ffb6eb;
-    color:#7d5b53;
-     width: 400px;
-    height: 200px;
-    resize: none;
-}
-textarea {
-  outline: none;
 }
 
-#salvar{
-    margin-left: 500px;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #fb97cb;
-    color: #fff;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    border-color: #694e3c;
+.BuscarNotas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
 }
-h1{
+
+#buscar {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+}
+
+/* filtros */
+#filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0;
+}
+
+.chip {
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cor0 { background: #f4a6bd; color: #603a2c; }
+.cor1 { background: #e6e0fa; color: #4b3a85; }
+.cor2 { background: #d9f3e4; color: #2d7a55; }
+.cor3 { background: #ffe6cc; color: #8a5a2b; }
+
+.chip.ativo {
+    border-color: #603a2c;
+}
+
+/* lista de notas */
+#listaNotas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.cartao-nota {
+    background: white;
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+.cartao-nota:hover {
+    background: #f9f9f9;
+}
+
+.cartao-nota.ativa {
+    border: 2px solid #f4a6bd;
+}
+
+.cartao-nota h4 {
+    margin: 0 0 4px;
+    padding-right: 22px;
+}
+
+.cartao-nota p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+}
+
+.cartao-nota i {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    color: #f4a6bd;
+}
+
+.sem-notas {
+    color: gray;
+    padding: 10px;
+}
+
+#novaNota {
+    width: 100%;
+    padding: 12px;
+    background: #f4a6bd;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #603a2c;
+    cursor: pointer;
+}
+
+#novaNota:hover {
+    background: #f293b0;
+}
+
+/* editor */
+.coluna-editor {
+    flex: 1;
+}
+
+.topo-editor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#tituloNota {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: #603a2c;
     font-family: Arial, sans-serif;
+}
+
+#favorita {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #f4a6bd;
+    cursor: pointer;
+}
+
+.ferramentas {
+    display: flex;
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.ferramentas button {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #603a2c;
+    cursor: pointer;
+}
+
+.ferramentas button:hover {
+    background: #f6d2e7;
+}
+
+#painelEmoji {
+    display: none;
+    gap: 6px;
+    background: white;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 12px;
+    width: fit-content;
+}
+
+#painelEmoji button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#conteudo {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 260px;
+    font-size: 18px;
+    outline: none;
+}
+
+#conteudo:empty::before {
+    content: attr(data-ph);
+    color: gray;
+}
+
+#conteudo img {
+    max-width: 100%;
+}
+
+.rodape-editor {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.rodape-editor input {
+    flex: 1;
+    padding: 10px;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+#tagsVisiveis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tag {
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#apagarNota {
+    margin-top: 18px;
+    background: none;
+    border: none;
+    color: #C2457A;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#apagarNota:hover {
+    color: red;
 }

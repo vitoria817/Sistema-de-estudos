@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>início</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/dist/tabler-icons.min.css">
-    
 </head>
 <body>
-    <h1 id="Bem-vindo">Bem-vindo!</h1>
 
 <aside class="barra-lateral">
    <button class="inicio btn-ir" data-destino="index.html"><i class="ti ti-home"></i>Início</button>
@@ -19,6 +17,35 @@
   <button class="Foco btn-ir" data-destino="foco.html"><i class="ti ti-clock"></i>Foco</button>
 </aside>
 
+<div class="conteudo">
+    <h1 id="Bem-vindo">Bem-vindo</h1>
+    <p id="subtitulo"></p>
+
+    <div class="grade">
+        <div class="cartao">
+            <h3><i class="ti ti-calendar-heart"></i>Agenda de hoje</h3>
+            <div id="agendaHoje"></div>
+        </div>
+
+        <div class="cartao">
+            <h3 class="verde"><i class="ti ti-checklist"></i>Tarefas</h3>
+            <div id="tarefasHoje"></div>
+        </div>
+
+        <div class="cartao roxo">
+            <h3><i class="ti ti-hourglass"></i>Hora de focar</h3>
+            <p class="tempo">25:00</p>
+            <button class="btn-ir botaoComecar" data-destino="foco.html"><i class="ti ti-player-play"></i> Começar</button>
+        </div>
+
+        <div class="cartao amarelo">
+            <h3><i class="ti ti-pin"></i>Nota rápida</h3>
+            <textarea id="notaRapida" placeholder="Escreva um lembrete rápido..."></textarea>
+        </div>
+    </div>
+</div>
+
 <script src="js/inicio.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

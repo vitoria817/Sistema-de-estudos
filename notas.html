@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,23 +15,50 @@
   <button class="Tarefas btn-ir" data-destino="tarefas.html"><i class="ti ti-checklist"></i>Tarefas</button>
   <button class="Foco btn-ir" data-destino="foco.html"><i class="ti ti-clock"></i>Foco</button>
 </aside>
-    <!--parte de buscar notas-->
-    <div class="BuscarNotas">
-        <input type="text" id="buscar" placeholder="🔍Buscar notas...">
-    </div>
 
-    
-        <div class="escrever-notas">
-           <h1>Escreva suas notas aqui:</h1>
-            <textarea id="notas" placeholder="Digite suas notas aqui..."></textarea>
-          
+    <div class="principal">
+
+        <div class="coluna-lista">
+            <div class="BuscarNotas">
+                <i class="ti ti-search"></i>
+                <input type="text" id="buscar" placeholder="Buscar notinhas...">
+            </div>
+
+            <div id="filtros"></div>
+
+            <div id="listaNotas"></div>
+
+            <button id="novaNota"><i class="ti ti-plus"></i> Nova nota</button>
         </div>
-        
-            <button id="salvar" onclick="salvarNota()">Salvar</button>
-            
-            <div id="resultado"></div>
 
+        <div class="coluna-editor">
+            <div class="topo-editor">
+                <input type="text" id="tituloNota" placeholder="Título da nota">
+                <button id="favorita" title="Favoritar"><i class="ti ti-star"></i></button>
+            </div>
 
+            <div class="ferramentas">
+                <button data-cmd="bold" title="Negrito"><i class="ti ti-bold"></i></button>
+                <button data-cmd="italic" title="Itálico"><i class="ti ti-italic"></i></button>
+                <button id="marcar" title="Marca-texto"><i class="ti ti-highlight"></i></button>
+                <button data-cmd="insertUnorderedList" title="Lista"><i class="ti ti-list"></i></button>
+                <button id="emoji" title="Emoji"><i class="ti ti-mood-smile"></i></button>
+            </div>
+
+            <div id="painelEmoji"></div>
+
+            <div id="conteudo" contenteditable="true" data-ph="Escreva sua nota aqui:"></div>
+
+            <div class="rodape-editor">
+                <input type="text" id="materiaNota" placeholder="Matéria">
+            </div>
+
+            <div id="tagsVisiveis"></div>
+
+            <button id="apagarNota"><i class="ti ti-trash"></i> Apagar nota</button>
+        </div>
+
+    </div>
 
     <script src="js/inicio.js"></script>
     <script src="js/notas.js"></script>

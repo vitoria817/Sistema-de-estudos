@@ -17,17 +17,30 @@
   <button class="Foco btn-ir" data-destino="foco.html"><i class="ti ti-clock"></i>Foco</button>
 </aside>
 
+<!-- NOVO: wrapper para colocar o contador e a lista lado a lado -->
+<div class="focoPagina">
+
     <div class="containerContador">
-        <h1>Contador</h1>
         <div class="contador">
-            <input type="text" id="contador" value="0" readonly>
+           <div class="circulo">
+    <input type="text" id="contador" value="00:00" readonly>
+
+</div>
         </div>
-        <button id="incrementar">Incrementar</button>
-        <button id="resetar">Resetar</button>
-        <button id ="pausar">Pausar</button>
-        <button id="escolhertempo">Definir tempo</button>
+        <div class="botoesCronometro">
+           <button id="pausar" onclick="pausarContador()">Pausa</button>
+            <button id="Pomodoro25" onclick="pomodoro()">Pomodoro</button>
+        </div>
+        
     </div>
 
+    <!-- NOVO: lista de tarefas -->
+    <section class="painelTarefas">
+        <ul id="listaTarefas"></ul>
+        <input type="text" id="novaTarefa" placeholder="+ Nova tarefa (Enter para adicionar)" maxlength="60">
+    </section>
+
+</div>
 
     <script src="js/foco.js"></script>
     <script src="js/inicio.js"></script>

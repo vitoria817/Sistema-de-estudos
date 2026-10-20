@@ -1,91 +1,50 @@
-.agenda {
-  max-width: 420px;
-  margin-left: 200px;
-}
-
-.agenda-topo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-
-.agenda-topo h2 {
-  margin: 0;
-  font-size: 24px;
-  color: #5A2A3F;
-}
-
-.agenda-topo button {
-  background: none;
-  border: none;
-  font-size: 26px;
-  color: #C2457A;
-  cursor: pointer;
-}
-
-.dias-semana,
-.dias {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
-  text-align: center;
-}
-
-.dias-semana {
-  margin-bottom: 6px;
-  font-size: 13px;
-  color: #A0707F;
-}
-
-.dias div {
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: #fff;
-  color: #5A2A3F;
-}
-
-.dias div:empty {
-  background: none;
-}
-
-.dias div.hoje {
-  background: #F4A6C0;
-  color: #4B1528;
-  font-weight: 600;
-}
-
-body{
-    background-color:rgb(252, 230, 245);
+body {
+    background-color: rgb(252, 230, 245);
     margin: 0;
 }
-#Bem-vindo{
-    color:#603a2c;
+
+#Bem-vindo {
+    color: #603a2c;
     font-family: Arial, sans-serif;
     margin-left: 220px;
 }
+
 .barra-lateral {
-  width: 150px;
-  min-height: 90vh;
-  background: #FFE1EC;
-  padding: 60px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background: #f6d2e7;
-  color: #C2457A;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  font-size:larger;
-  
+    width: 150px;
+    padding: 60px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: #f6d2e7;
+    color: #C2457A;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: larger;
 }
+
+.barra-lateral button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.inicio,
+.Notas,
+.Agenda,
+.Tarefas,
+.Foco {
+    margin: 10px;
+    color: #603a2c;
+}
+
 .inicio:hover,
 .Notas:hover,
 .Agenda:hover,
@@ -94,29 +53,171 @@ body{
     background-color: #f9f9f9;
     border-radius: 16px;
     padding: 10px;
-    color:#fe5ea1;
-    
-}
-.inicio,
-.Notas,
-.Agenda,
-.Tarefas,
-.Foco{
-    margin: 10px;
-    color:#603a2c;
-}
-.dias div.selecionado {
-  background: #f10155;
-  color: #fff;
-  border-radius: 500px;
+    color: #fe5ea1;
 }
 
-.barra-lateral button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
+/* layout da agenda */
+.agenda {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-left: 200px;
+    padding: 30px;
+}
+
+.calendario {
+    flex: 1;
+    max-width: 560px;
+}
+
+/* calendário */
+.agenda-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.agenda-topo h2 {
+    margin: 0;
+    color: #603a2c;
+}
+
+.agenda-topo button {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #C2457A;
+    cursor: pointer;
+}
+
+.dias-semana,
+.dias {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.dias-semana {
+    margin-bottom: 8px;
+    color: #603a2c;
+}
+
+.dias div {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: white;
+    color: #603a2c;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.dias div:empty {
+    background: none;
+    cursor: default;
+}
+
+.dias div.hoje {
+    background: #f4a6bd;
+    font-weight: bold;
+}
+
+/* fica depois de "hoje" para ganhar dele */
+.dias div.marcado {
+    background: #e0112f;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* compromissos */
+.novoCompromisso {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* formulário em cima, cards embaixo */
+#DigiteCompromisso { order: -3; }
+#HoraCompromisso   { order: -2; }
+#botaoCompromisso  { order: -1; }
+
+#listaCompromissos {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#DigiteCompromisso,
+#HoraCompromisso {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    font-size: 16px;
+    color: #603a2c;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+#botaoCompromisso {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    color: #603a2c;
+    background: #f4a6bd;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#botaoCompromisso:hover {
+    background: #f293b0;
+}
+
+/* card do compromisso */
+.compromisso {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: white;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.compromisso .hora {
+    font-size: 16px;
+    color: gray;
+}
+
+.compromisso .titulo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #603a2c;
+    word-break: break-word;
+}
+
+.btn-apagar {
+    width: 36px;
+    height: 36px;
+    background: #f6d2e7;
+    color: #C2457A;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-apagar:hover {
+    background: red;
+    color: white;
 }

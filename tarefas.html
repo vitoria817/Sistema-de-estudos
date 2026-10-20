@@ -1,12 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tarefas</title>
     <link rel="stylesheet" href="css/tarefas.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/dist/tabler-icons.min.css">
 </head>
 <body>
-    
+
+<aside class="barra-lateral">
+   <button class="inicio btn-ir" data-destino="index.html"><i class="ti ti-home"></i>Início</button>
+  <button class="Notas btn-ir" data-destino="notas.html"><i class="ti ti-notebook"></i>Notas</button>
+  <button class="Agenda btn-ir" data-destino="agenda.html"><i class="ti ti-calendar"></i>Agenda</button>
+  <button class="Tarefas btn-ir" data-destino="tarefas.html"><i class="ti ti-checklist"></i>Tarefas</button>
+  <button class="Foco btn-ir" data-destino="foco.html"><i class="ti ti-clock"></i>Foco</button>
+</aside>
+
+<div class="conteudo">
+    <h1>Tarefas</h1>
+    <p id="resumo"></p>
+
+    <div class="nova">
+        <input type="text" id="novaTarefa" placeholder="Digite uma tarefa..." maxlength="80">
+        <button id="adicionar">+ Adicionar</button>
+    </div>
+
+    <div id="lista"></div>
+
+    <button id="limpar">Limpar feitas</button>
+</div>
+
+<div id="bichinho">
+    <div id="balao"></div>
+    <div class="corpo">
+        <div class="olho"></div>
+        <div class="olho"></div>
+        <div class="boca"></div>
+    </div>
+</div>
+<script src="js/bichinho.js"></script>
+<script src="js/inicio.js"></script>
+<script src="js/tarefas.js"></script>
 </body>
 </html>

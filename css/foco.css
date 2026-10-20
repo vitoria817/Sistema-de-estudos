@@ -1,26 +1,44 @@
-body{
-    background-color:rgb(252, 230, 245);
+body {
+    background-color: rgb(252, 230, 245);
     margin: 0;
 }
+
 .barra-lateral {
-  width: 150px;
-  min-height: 90vh;
-  background: #FFE1EC;
-  padding: 60px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background: #f6d2e7;
-  color: #C2457A;
+    width: 150px;
+    padding: 60px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: #f6d2e7;
+    color: #C2457A;
     font-family: Arial, sans-serif;
-  text-align: center;
-  font-size:larger;
-  
+    text-align: center;
+    font-size: larger;
 }
+
+.barra-lateral button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.inicio,
+.Notas,
+.Agenda,
+.Tarefas,
+.Foco {
+    margin: 10px;
+    color: #603a2c;
+}
+
 .inicio:hover,
 .Notas:hover,
 .Agenda:hover,
@@ -29,29 +47,199 @@ body{
     background-color: #f9f9f9;
     border-radius: 16px;
     padding: 10px;
-    color:#fe5ea1;
-    
-}
-.inicio,
-.Notas,
-.Agenda,
-.Tarefas,
-.Foco{
-    margin: 10px;
-    color:#603a2c;
+    color: #fe5ea1;
 }
 
-.barra-lateral button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
+/* contador e lista lado a lado */
+.focoPagina {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
 }
 
-.containerContador{
+.containerContador {
+    flex-shrink: 0;
     margin-left: 220px;
+    margin-top: 80px;
+    padding: 78px;
+    width: 210px;
+    background: #e6d0f8;
+    border-radius: 28px;
     font-family: Arial, sans-serif;
+}
+
+.circulo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: white;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin-right: -48px;
+}
+
+#contador {
+    width: 100%;
+    padding: 100px 40px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #533d70;
+    font-size: 35px;
+    box-sizing: border-box;
+}
+
+.botoesCronometro {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 220px;
+    margin-top: 14px;
+}
+
+#incrementar,
+#resetar,
+#pausar,
+#escolhertempo {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f6d6e3;
+}
+
+#Pomodoro25,
+#pausar {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 30px;
+    background: #f6bfd6;
+    color: #603a2c;
+    cursor: pointer;
+}
+
+/* botão principal, com mais destaque */
+#Pomodoro25 {
+    background: #c294f5;
+    color: white;
+}
+
+#Pomodoro25:hover {
+    background: #b983f3;
+}
+
+#pausar:hover {
+    background: #f4aecb;
+}
+
+/* lista de tarefas */
+.painelTarefas {
+    width: 380px;
+    margin-top: 80px;
+    padding: 22px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 24px;
+}
+
+#listaTarefas {
+    list-style: none;
+    margin: 0 0 14px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* sem tarefas, o espaço some */
+#listaTarefas:empty {
+    display: none;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: white;
+    border-radius: 10px;
+}
+
+.tarefa label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #603a2c;
+    word-break: break-word;
+}
+
+/* esconde o checkbox de verdade e usa o .caixa no lugar */
+.tarefa input[type="checkbox"] {
+    display: none;
+}
+
+.caixa {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #f4a6bd;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+}
+
+.caixa i {
+    opacity: 0;
+}
+
+.tarefa input:checked + .caixa {
+    background: #f4a6bd;
+}
+
+.tarefa input:checked + .caixa i {
+    opacity: 1;
+}
+
+.tarefa input:checked ~ .textoTarefa {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.btnRemoverTarefa {
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: gray;
+    cursor: pointer;
+}
+
+.btnRemoverTarefa:hover {
+    color: red;
+}
+
+#novaTarefa {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    color: #603a2c;
 }

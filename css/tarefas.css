@@ -1,4 +1,240 @@
-body{
-    background-color:rgb(252, 230, 245);
+body {
+    background-color: rgb(252, 230, 245);
     margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.barra-lateral {
+    width: 150px;
+    padding: 60px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: #f6d2e7;
+    color: #C2457A;
+    text-align: center;
+    font-size: larger;
+}
+
+.inicio:hover,
+.Notas:hover,
+.Agenda:hover,
+.Tarefas:hover,
+.Foco:hover {
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    padding: 10px;
+    color: #fe5ea1;
+}
+
+.inicio,
+.Notas,
+.Agenda,
+.Tarefas,
+.Foco {
+    margin: 10px;
+    color: #603a2c;
+}
+
+.barra-lateral button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.conteudo {
+    margin-left: 210px;
+    padding: 30px 40px;
+    max-width: 600px;
+}
+
+.conteudo h1 {
+    margin: 0;
+    color: #603a2c;
+}
+
+#resumo {
+    color: #603a2c;
+    margin-bottom: 20px;
+}
+
+.nova {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#novaTarefa {
+    flex: 1;
+    padding: 12px;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+#adicionar {
+    padding: 12px 20px;
+    background: #f4a6bd;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #603a2c;
+    cursor: pointer;
+}
+
+#adicionar:hover {
+    background: #f293b0;
+}
+
+#lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 18px;
+    color: #603a2c;
+}
+
+.tarefa input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.tarefa span {
+    flex: 1;
+    word-break: break-word;
+}
+
+.tarefa.feita span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.tarefa button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: gray;
+    cursor: pointer;
+}
+
+.tarefa button:hover {
+    color: red;
+}
+
+.vazio {
+    color: gray;
+    padding: 10px;
+}
+
+#limpar {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    color: #C2457A;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#limpar:hover {
+    color: red;
+}
+
+/* bichinho */
+#bichinho {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    text-align: center;
+}
+
+#balao {
+    background: white;
+    color: #603a2c;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.corpo {
+    width: 90px;
+    height: 80px;
+    background: #c9b6f2;
+    border-radius: 50% 50% 45% 45%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.olho {
+    width: 10px;
+    height: 14px;
+    background: #4b3a85;
+    border-radius: 50%;
+    position: absolute;
+    top: 28px;
+}
+
+.olho:nth-child(1) {
+    left: 24px;
+}
+
+.olho:nth-child(2) {
+    right: 24px;
+}
+
+.boca {
+    width: 16px;
+    height: 4px;
+    background: #4b3a85;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -8px;
+}
+
+/* quando está feliz */
+.feliz .corpo {
+    animation: pular 0.5s 2;
+}
+
+.feliz .olho {
+    height: 6px;
+    background: none;
+    border-top: 4px solid #4b3a85;
+    border-radius: 10px 10px 0 0;
+}
+
+.feliz .boca {
+    width: 22px;
+    height: 8px;
+    margin-left: -11px;
+    background: none;
+    border-bottom: 4px solid #4b3a85;
+    border-radius: 0 0 20px 20px;
+}
+
+@keyframes pular {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-25px); }
 }
